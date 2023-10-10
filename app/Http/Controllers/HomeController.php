@@ -6,12 +6,22 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function utama()
+    public function index()
     {
-        return view('welcome');
+        return view('home');
     }
 
-    public function bio(){
-        return view('halaman.biodata');
+    public function register()
+    {
+        return view('halaman.register');
+    }
+
+    public function kirim(Request $request)
+    {
+        $namaDepan = $request['namaDepan'];
+        $namaBelakang = $request['namaBelakang'];
+
+        return view('halaman.welcome', ['namaDepan' => $namaDepan, 'namaBelakang' => $namaBelakang]);
+
     }
 }

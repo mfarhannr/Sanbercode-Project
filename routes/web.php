@@ -14,5 +14,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'utama']);
-Route::get('/biodata', [HomeController::class, 'bio']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/register', [HomeController::class, 'register']);
+Route::post('/kirim', [HomeController::class, 'kirim']);
