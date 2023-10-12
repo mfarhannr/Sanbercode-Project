@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Castcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,9 @@ Route::get('/table', function () {
 Route::get('/data-table', function(){
     return view('halaman.data-table');
 });
+
+Route::get('/cast', function(){
+    return view('halaman.cast');
+});
+
+Route::get('/cast/create', [CastController::class, 'create']);
