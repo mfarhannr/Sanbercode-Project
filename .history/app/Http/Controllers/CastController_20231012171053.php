@@ -20,7 +20,7 @@ class CastController extends Controller
             'umur' => 'required',
             'bio' => 'required'
         ]);
-        $query = DB::table('casts')->insert([
+        $query = DB::table('cast')->insert([
             "nama" => $request["nama"],
             "umur" => $request["umur"],
             "bio" => $request["bio"]

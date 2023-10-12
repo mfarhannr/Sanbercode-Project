@@ -18,9 +18,9 @@ class CastController extends Controller
         $request->validate([
             'nama' => 'required',
             'umur' => 'required',
-            'bio' => 'required'
+            'bio' => ''
         ]);
-        $query = DB::table('casts')->insert([
+        $query = DB::table('post')->insert([
             "nama" => $request["nama"],
             "umur" => $request["umur"],
             "bio" => $request["bio"]
