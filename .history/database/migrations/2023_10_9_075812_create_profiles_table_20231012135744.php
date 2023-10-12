@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('films', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('ringkasan');
-            $table->integer('tahun');
-            $table->string('poster');
-            $table->unsignedBigInteger('genres_id');
-            $table->foreign('genres_id')->references('id')->on('genres')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('umur');
+            $table->text('bio');
+            $table->text('alamat');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('films');
+        Schema::dropIfExists('profiles');
     }
 };

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('casts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->integer('umur');
+            $table->text('umur');
             $table->text('bio');
             $table->timestamps();
         });

@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('casts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->integer('umur');
+            $table->text('umur');
             $table->text('bio');
+            $table->unsignedBigInteger('cast_id');
+            $table->foreign('peran_id')->references('id')->on('peran');
+
             $table->timestamps();
         });
     }

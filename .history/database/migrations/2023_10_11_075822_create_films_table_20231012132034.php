@@ -16,9 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('ringkasan');
             $table->integer('tahun');
-            $table->string('poster');
-            $table->unsignedBigInteger('genres_id');
-            $table->foreign('genres_id')->references('id')->on('genres')->onDelete('cascade')->onUpdate('cascade');
+            $table
             $table->timestamps();
         });
     }
