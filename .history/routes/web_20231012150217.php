@@ -27,4 +27,4 @@ Route::get('/data-table', function(){
 });
 
 Route::get('/cast/create', [CastController::class, 'create']);
-Route::post('/cast', [CastController::class, 'store']);
+Route::get('/cast')

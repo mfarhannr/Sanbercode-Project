@@ -16,7 +16,7 @@ class CastController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|unique:post',
             'umur' => 'required',
             'bio' => 'bio'
         ]);

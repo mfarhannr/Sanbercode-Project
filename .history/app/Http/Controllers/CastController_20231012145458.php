@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CastController extends Controller
 {
@@ -16,15 +15,14 @@ class CastController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|unique:post',
             'umur' => 'required',
-            'bio' => 'bio'
+            'bio' => 'bio',
         ]);
         $query = DB::table('post')->insert([
             "nama" => $request["nama"],
-            "umur" => $request["umur"],
-            "bio" => $request["bio"]
+            "umur" => $request["umur"]
         ]);
-        return redirect('/cast');
+        return redirect('/posts');
     }
 }

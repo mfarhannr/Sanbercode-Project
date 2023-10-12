@@ -16,14 +16,14 @@ class CastController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|unique:post',
             'umur' => 'required',
-            'bio' => 'bio'
+            'bio' => 'bio',
         ]);
         $query = DB::table('post')->insert([
             "nama" => $request["nama"],
             "umur" => $request["umur"],
-            "bio" => $request["bio"]
+            "bio" => $request["umur"]
         ]);
         return redirect('/cast');
     }
